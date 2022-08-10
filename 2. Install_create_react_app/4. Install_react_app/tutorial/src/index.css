@@ -33,6 +33,16 @@ body {
 
 .book h1 {
     margin-bottom: 0.5rem;
-    
 }
+
+
+.book p{
+    color: #617d98;
+    /* letter-spacing: 5px; */
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+
+
     
