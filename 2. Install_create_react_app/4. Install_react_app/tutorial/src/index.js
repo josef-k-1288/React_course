@@ -4,6 +4,9 @@ import ReactDOM from "react-dom";
 // CSS Import
 import "./index.css";
 
+import {books} from './books';
+import SpecificBook from "./Book";
+import {greeting} from './testing/testing';
 
 // function Greeting() {
 //   return <h4>this is john and this is my first component</h4>;
@@ -17,45 +20,25 @@ import "./index.css";
 // close every element
 // formating
 
-const firstBook = {
-  img: "https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX331_BO1,204,203,200_.jpg",
-  title: "Harry Potter and the Sorcerer's Stone",
-  author: "J.K. Rowling",
-}
 
-const secondBook = {
-  img: "https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX331_BO1,204,203,100_.jpg",
-  title: "Harry Potter and the Sorcerer's Stone",
-  author: "ORson Wels",
-}
 
 
 function BookList() {
+  console.log(greeting);
   return (
     <section className="booklist">
-      <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}>
-        <p>Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
-      </Book>
-      <Book img={secondBook.img} title={secondBook.title} author={secondBook.author}/>
+     {books.map((book, index)=>{
+      //console.log(book);
+     
+        return <SpecificBook key={index} {...book}></SpecificBook>;
+     })}
       
     </section>
   );
 }
 
 
-const Book = ({img, title, author, children}) => {
-  // console.log(props);
-  //const {img, title, author} = props;
-  return (
-  <article className="book">
-      <img src={img} />
-      <h1>{title}</h1>
-      <p>{author}</p>
-      {children}
-  </article>
-  
-  );
-};
+
 
 
 
